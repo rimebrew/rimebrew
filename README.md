@@ -36,6 +36,8 @@ Python 3.6+。把整个源码包丢到 用户的配置文件夹 下面，按上�
 + 配置功能，rimebrew 要能够理解配置文件以此来
 + 实现 [plum #4](https://github.com/rime/plum/issues/4)
 
++ 完成后发布 1.0
+
 
 ## FAQ
 
