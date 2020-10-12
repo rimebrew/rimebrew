@@ -14,6 +14,8 @@ Python 3.6+。把整个源码包丢到 用户的配置文件夹 下面，按上�
 
 # 相关链接
 
+在线查看已经收录的包 <https://rimebrew.github.io/index.html>
+
 进度和想法 <https://github.com/users/shenlebantongying/projects/2>
 
 仓库地址 <https://github.com/rimebrew/rime_bundle>
