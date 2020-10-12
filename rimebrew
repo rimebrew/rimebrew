@@ -37,6 +37,7 @@ def install(schema_name):
         import install
         install.basic_install(schema_name)
         print("Installed")
+        # TODO modify user.yaml
 
 
 @cli.command()
