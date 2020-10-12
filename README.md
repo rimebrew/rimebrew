@@ -6,7 +6,7 @@ The Canonical RIME Schema Manager.
 
 # 使用方法
 
-Python 3.6+。把整个源码包丢到 用户的配置文件夹 下面，按上图操作
+Python 3.6+。把整个源码包丢到 用户的配置文件夹 下面，按上图操作 TODO: 随便丢一个地方就可以
 
 ```
 ./rimebrew
@@ -60,8 +60,10 @@ Python 3.6+。把整个源码包丢到 用户的配置文件夹 下面，按上�
 ### 图形界面？
 
 + 正在做，web_ui
-+ Python 自带一个 http.server，启动后直接用浏览器操作就可以了
++ Python 自带一个 http.server，启动后直接用浏览器操作就可以了 （就和 Jupyter 一样）
 + 可以复用一些之前 @lotem 的代码 [rimekit]<https://github.com/lotem/rimekit>
++ possible design: https://github.com/rime/home/issues/336#issuecomment-473100326
++ ~~浏览器插件不现实，不是每个人都用 Firefox 和 Chrome~~
 
 ### 为什么闷声不响地做出来
 
@@ -98,4 +100,4 @@ REF:
 + 为一的版本控制就是：在本地更新前创建一个当前的配置的 snapshot，如果更新破坏了，就直接 rollback
 + 另外一旦失败就打印一份详细的出错说可以用来复制粘贴
 
-    
+#### 云同步？
