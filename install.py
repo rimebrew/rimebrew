@@ -5,6 +5,7 @@ from shutil import copy as Install
 import bundle
 
 # TODO now, lets only install on the user's dir -> maybe yes? For portabilty
+# TODO 按照这个完美定义 user_data_dir https://github.com/rime/plum/blob/master/scripts/frontend.sh
 user_data_dir = os.path.relpath('../')
 
 
