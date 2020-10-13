@@ -2,6 +2,7 @@
 
 # Fetch bundles from cloud and then update bundle_meta
 
+from bundle import bundle_factory
 from utility_functions import *
 
 
@@ -14,18 +15,22 @@ def update():
     fetch_zip_file_to(central_url, '.', folder_name="rime_bundle")
 
     # get bundle list
-    bundle_list = []
+    bundle_file_list = []
     for _file in os.listdir(main_bundle_dir):
         if _file[-5:] == ".yaml":
-            bundle_list.append(_file)
+            bundle_file_list.append(_file)
 
-    # This meta file is intended to simplify the GUI dev.
+    # le is intended to simplify the GUI dev.
     meta_bundle = dict()
 
-    for bundle_name in bundle_list:
-        bundle = load_from_yamlfile(main_bundle_dir + '/' + bundle_name)
-        for _name, schema in bundle['provides'].items():  # here, the items can be replaced by an iterator!
-            schema['source'] = bundle_name
-            meta_bundle[_name] = schema
+    for bundle_file in bundle_file_list:
 
-    dump_yaml(meta_bundle, './bundle_meta.yaml')
+        bundle = bundle_factory(main_bundle_dir + '/' + bundle_file)
+        for formula in bundle.provides:
+            bundle.provides[formula]["source"] = bundle_file
+            meta_bundle[formula] = bundle.provides[formula]
+
+        dump_yaml(meta_bundle, './bundle_meta.yaml')
+
+
+update()
