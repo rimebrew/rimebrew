@@ -47,6 +47,11 @@ def load_from_yamlfile(_path: str) -> typing.Union[list, dict]:
         return yaml.load(yaml_config_file, Loader=yaml.Loader)
 
 
-def dump_yaml(_content, _path: str):
+def load_yaml_doc(_path: str):
+    with open(_path, 'r') as file:
+        return [document for document in yaml.load_all(file, Loader=yaml.Loader)]
+
+
+def dump_yaml(_content: str, _path: str):
     with open(_path, 'wb') as _file:
         _file.write(yaml.dump(_content, allow_unicode=True).encode())

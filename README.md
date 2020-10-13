@@ -8,7 +8,7 @@ The Canonical RIME Schema Manager.
 
 Python 3.6+。把整个源码包丢到 用户的配置文件夹 下面，按上图操作 TODO: 随便丢一个地方就可以
 
-目前只实现了三个简单的共轭你那个
+目前只实现了三个简单的功能
 ```
 ./rimebrew update
            list
