@@ -32,5 +32,5 @@ def update():
 
         dump_yaml(meta_bundle, './bundle_meta.yaml')
 
-
-update()
+if __name__ == "__main__":
+    update()

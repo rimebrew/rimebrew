@@ -1,15 +1,17 @@
+
 ---
-id: luna_pinyin
-display_name: 朙月拼音
-url: https://github.com/rime/rime-luna-pinyin
+id: devanagari
+display_name: 天城體梵文
+url: https://github.com/biopolyhedron/rime-devanagari
 url_to_file: /archive/master.zip
+
+provides:
+  devanagari:
+    type: basic
+    display_name: 天城體梵文
+    files:
+      - devanagari.dict.yaml
+      - devanagari.schema.yaml
+
 ---
-luna_pinyin:
-  type: basic
-  display_name: 朙月拼音-默認
-  files:
-    - xxxxx.dict.yaml
-    - luna_pinyin.schema.yaml
-    - additinoal.yaml
-    - lua/script.lua
 

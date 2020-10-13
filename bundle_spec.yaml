@@ -11,29 +11,32 @@ display_name: 朙月拼音
 url: https://github.com/rime/rime-luna-pinyin
 url_to_file: /archive/master.zip
 
----
+
 # 第二个放每一个方案的内容
 # 也就是这个的第二栏 https://github.com/rime/home/issues/336#issuecomment-473100326
 
 # -> dumped format: {"luna_pinyin": {type: ,
 #                                    display_name:
 #                                    files: ["x","y"]}   }
-luna_pinyin:
-  type: |
-    basic -> 大部分字典 + 配置的字字典
-    patcher -> 专门用作辅助其他输入法的补丁性质的 -> Rime-Emoji Rime-Symbols, ez-english etc
-    Hybrid -> 预设的混合模式，比如说 这个里面预设的 luna-pin+english  https://github.com/BlindingDark/rime-easy-en
-    Solution -> 一些从到脚都完全定制的“发行版” https://github.com/KyleBing/rime-wubi86-jidian
-    Skin -> 皮肤
-  display_name: 朙月拼音-默認
-  files:
-    - xxxxx.dict.yaml #其实不需要这两行，可以直接从id推倒出这个文件名，不过那样不符合直觉
-    - luna_pinyin.schema.yaml
-    - additinoal.yaml
-    - lua/script.lua # TODO 实现下插入特别的目录
-  special script: # 由少数的输入法需要特别的步骤，可以考虑按照个案直接集成到rimebrew，然后定义
-    - Lua-extension
+provides:
+  luna_pinyin:
+    type: |
+      basic -> 大部分字典 + 配置的字字典
+      patcher -> 专门用作辅助其他输入法的补丁性质的 -> Rime-Emoji Rime-Symbols, ez-english etc
+      Hybrid -> 预设的混合模式，比如说 这个里面预设的 luna-pin+english  https://github.com/BlindingDark/rime-easy-en
+      Solution -> 一些从到脚都完全定制的“发行版” https://github.com/KyleBing/rime-wubi86-jidian
+      Skin -> 皮肤
+    display_name: 朙月拼音-默認
+    files:
+      - xxxxx.dict.yaml #其实不需要这两行，可以直接从id推倒出这个文件名，不过那样不符合直觉
+      - luna_pinyin.schema.yaml
+      - additinoal.yaml
+      - lua/script.lua # TODO 实现下插入特别的目录
+    special script: # 由少数的输入法需要特别的步骤，可以考虑按照个案直接集成到rimebrew，然后定义
+      - Lua-extension
 
-  # 根据类型额外的参数
-  skin_target -> 鼠须管的皮肤好像多一些
+    # 根据类型额外的参数
+    skin_target: -> 鼠须管的皮肤好像多一些
+
+---
 
