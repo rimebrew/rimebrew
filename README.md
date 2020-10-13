@@ -53,6 +53,7 @@ Python 3.6+。把整个源码包丢到 用户的配置文件夹 下面，按上�
   + 对比之下 Python 上有 PyYAML, click ,Bottle这种打磨了十多年的库
   + 这些库的存在完美的解决了跨平台问题
 + Tcl/Lua/Perl 这些现代的人可能不太会用了
++ 现在 Fedora/OpenSUSE 的大部分用户层，不需要性能的工具都是 Python。做的 Ubuntu 也逐渐有类似的趋势。Python 预装在大部分 Linux 里面的情景未来的一二十年都不会变。
 
 ### 为什么重写, 不用 /plum/？
 
