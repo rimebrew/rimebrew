@@ -34,8 +34,8 @@ def install(schema_name):
     if _schema_name is None:
         click.echo("rimebrew install <schema_id>: Missing schema name  ")
     else:
-        import install
-        install.basic_install(schema_name)
+        from .install import basic_install
+        basic_install(schema_name)
         print("Installed")
         # TODO modify user.yaml
 
@@ -43,8 +43,8 @@ def install(schema_name):
 @cli.command()
 def list():
     """Display a table of available schemas"""
-    import inspector
-    inspector.print_schemas()
+    from .inspector import print_schemas
+    print_schemas()
 
 
 @cli.command()
@@ -56,7 +56,7 @@ def remove():
 @cli.command()
 def update():
     """Fetch new schemas form repos and refresh local index."""
-    from update import update
+    from .update import update
     update()
 
 
