@@ -1,0 +1,12 @@
+enviroment:
+  distribution: ibus-rime
+  usr_data_dir: ~/.config/ibus/rime
+
+installed:
+  - luna_pinyin
+  - arabic
+
+additional_skins:
+  - 玫枫
+  - 安静
+
