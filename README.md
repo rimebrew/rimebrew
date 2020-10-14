@@ -1,7 +1,7 @@
  # R I M E B R E W
 The Canonical RIME Schema Manager.
 
-![pypi](https://img.shields.io/badge/PyPI- - ?logo=python&labelColor=lightgrey&style=social)
+[![PyPI version](https://badge.fury.io/py/Rimebrew.svg)](https://badge.fury.io/py/Rimebrew)
 
 ![Peek 2020-10-11 23-52](https://user-images.githubusercontent.com/20123683/95703540-23415080-0c1d-11eb-8663-1af78e76d624.gif)
 
