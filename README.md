@@ -1,12 +1,18 @@
  # R I M E B R E W
 The Canonical RIME Schema Manager.
 
+![pypi](https://img.shields.io/badge/PyPI-available-success?logo=python&labelColor=lightgrey&style=social)
+
 ![Peek 2020-10-11 23-52](https://user-images.githubusercontent.com/20123683/95703540-23415080-0c1d-11eb-8663-1af78e76d624.gif)
 
 
 # 使用方法
 
 Python 3.6+。把整个源码包丢到 用户的配置文件夹 下面，按上图操作 TODO: 随便丢一个地方就可以
+
+```
+pip install Rimebrew
+```
 
 目前只实现了三个简单的功能
 ```
