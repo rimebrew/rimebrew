@@ -4,7 +4,7 @@
 # It won't modify any file.
 # For the stupid windows' terminal
 from colorama import init, Fore, Style
-from utility_functions import load_from_yamlfile
+from .utility_functions import load_from_yamlfile
 
 init()
 

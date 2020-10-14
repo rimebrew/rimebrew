@@ -1,7 +1,8 @@
 # installer
 import os
 from shutil import copy as Install
-import bundle
+
+from .bundle import bundle_factory_from_schema_id
 
 # TODO now, lets only install on the user's dir -> maybe yes? For portabilty
 # TODO 按照这个完美定义 user_data_dir https://github.com/rime/plum/blob/master/scripts/frontend.sh
@@ -30,7 +31,7 @@ user_data_dir = os.path.relpath('../')
 # FIXME still some ulgy usage here
 # TODO implement @dataclass schema
 def basic_install(schema_id: str):
-    _bundle = bundle.bundle_factory_from_schema_id(schema_id)
+    _bundle = bundle_factory_from_schema_id(schema_id)
     _bundle.fetch()
 
     [Install(os.path.join('./cache/bundles',_bundle.repo.id,x), user_data_dir)
