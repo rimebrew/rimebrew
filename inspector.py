@@ -13,8 +13,9 @@ colorama.init()
 
 import typing
 
+# TODO FIXME Implement abs path now!
 meta_bundle = load_from_yamlfile('./cache/bundle_meta.yaml')
-user_yaml = load_from_yamlfile('./user.yaml')
+user_yaml = load_from_yamlfile('./user_profile.yaml')
 
 
 def get_installed() -> typing.Set:
