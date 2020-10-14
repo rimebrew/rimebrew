@@ -3,10 +3,10 @@
 # Inspector.py define several "look up" functions
 # It won't modify any file.
 # For the stupid windows' terminal
-from colorama import init, Fore, Style
+from . import colorama
 from .utility_functions import load_from_yamlfile
 
-init()
+colorama.init()
 
 # from rich.console import Console
 # from rich.table import Table
@@ -49,7 +49,7 @@ def print_schemas():
     print(formatString.format(id="# ID", name=my_align("# Name", 20), status="# Status"))
     for _id, schema in meta_bundle.items():
         installed = get_installed()
-        status = Fore.BLUE + 'Installed' + Style.RESET_ALL if _id in installed else Fore.MAGENTA + 'Available' + Style.RESET_ALL
+        status = colorama.Fore.BLUE + 'Installed' + colorama.Style.RESET_ALL if _id in installed else colorama.Fore.MAGENTA + 'Available' + colorama.Style.RESET_ALL
         print(formatString.format(id=_id, name=my_align(schema['display_name'], 20), status=status))
 
 # # adoption of the rich lib

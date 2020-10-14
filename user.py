@@ -1,6 +1,6 @@
 from dataclasses import dataclass
 
-from utility_functions import load_from_yamlfile
+from .utility_functions import load_from_yamlfile
 
 
 # currently this file only provide a installed list.
