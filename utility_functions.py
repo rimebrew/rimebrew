@@ -56,3 +56,7 @@ def dump_yaml(_content: str, _path: str):
     with open(_path, 'wb') as _file:
         _file.write(yaml.dump(_content, allow_unicode=True).encode())
 
+# PYTHON
+
+def strJoin(*strings):
+    return ''.join(strings)
