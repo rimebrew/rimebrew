@@ -2,7 +2,7 @@
 The Canonical RIME Schema Manager.
 
 [![PyPI version](https://badge.fury.io/py/rime-brew.svg)](https://badge.fury.io/py/rime-brew)
-
+![](https://img.shields.io/badge/openSUSE-testing-green?style=flat-square&logo=openSUSE&link=https://build.opensuse.org/package/binaries/home:slbtongying/rimebrew/openSUSE_Leap_15.2)
 ![Peek 2020-10-11 23-52](https://user-images.githubusercontent.com/20123683/95703540-23415080-0c1d-11eb-8663-1af78e76d624.gif)
 
 
@@ -12,6 +12,14 @@ Python 3.6+。把整个源码包丢到 用户的配置文件夹 下面，按上�
 
 ```
 pip install Rimebrew
+
+```
+
+RPM for openSUSE
+
+```
+https://build.opensuse.org/package/binaries/home:slbtongying/rimebrew/openSUSE_Leap_15.2
+
 ```
 
 目前只实现了三个简单的功能
