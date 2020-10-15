@@ -2,7 +2,7 @@ import os
 from dataclasses import dataclass
 from typing import Dict
 
-from .utility_functions import load_from_yamlfile, load_yaml_doc, fetch_zip_file_to
+from utility_functions import load_from_yamlfile, load_yaml_doc, fetch_zip_file_to
 
 
 # A super _elegant_ YAML <-> bundle.yaml mapping

@@ -3,8 +3,9 @@
 # Inspector.py define several "look up" functions
 # It won't modify any file.
 # For the stupid windows' terminal
-from . import colorama
-from .utility_functions import load_from_yamlfile
+import colorama
+from utility_functions import load_from_yamlfile,usr_data_dir
+import os
 
 colorama.init()
 
@@ -14,8 +15,8 @@ colorama.init()
 import typing
 
 # TODO FIXME Implement abs path now!
-meta_bundle = load_from_yamlfile('./cache/bundle_meta.yaml')
-user_yaml = load_from_yamlfile('./user_profile.yaml')
+meta_bundle = load_from_yamlfile(os.path.join(usr_data_dir(),'bundle_meta.yaml'))
+user_yaml = load_from_yamlfile(os.path.join(usr_data_dir(),'user_profile.yaml'))
 
 
 def get_installed() -> typing.Set:
@@ -53,14 +54,3 @@ def print_schemas():
         status = colorama.Fore.BLUE + 'Installed' + colorama.Style.RESET_ALL if _id in installed else colorama.Fore.MAGENTA + 'Available' + colorama.Style.RESET_ALL
         print(formatString.format(id=_id, name=my_align(schema['display_name'], 20), status=status))
 
-# # adoption of the rich lib
-# console = Console()
-# def print_schemas_fancy():
-#     table = Table(show_header=True)
-#     table.add_column("ID",style="dim",width=20)
-#     table.add_column("#Name",width="15")
-#     table.add_column("#Status",width="20")
-#     for _id, schema in meta_bundle.items():
-#         installed = get_installed()
-#         status = 'installed' if _id in installed else 'available'
-#         table.add_row(_id,schema['display_name'],status)

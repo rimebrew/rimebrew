@@ -9,6 +9,7 @@ from pathlib import Path
 
 import yaml
 
+# mode = 'dev'
 
 # commonly used functions
 
@@ -72,7 +73,9 @@ def strJoin(*strings):
 # fcitx code copy from https://github.com/rime/plum/blob/master/scripts/frontend.sh#L30
 # assuming it ir right
 
-def get_usr_data_dir():
+def _usr_data_dir():
+    if mode == 'dev':
+        return "./user_data_dir"
     if 'ibus' in [os.getenv('INPUT_METHOD'), os.getenv('GTK_IM_MODULE')]:
         return "~/.config/ibus/rime/"
     elif "fcitx" in [os.getenv('INPUT_METHOD'), os.getenv('QT_IM_MODULE')]:  # TODO not sure
@@ -85,3 +88,16 @@ def get_usr_data_dir():
         print("Detected that you are using Windows.\n")
         print("Please move rimebrew executable inside your user config dir")
         return "../"
+
+
+def usr_data_dir()->str:
+    """ wrapper of _usr_data_dir """
+    udr = _usr_data_dir()
+    mkdir(udr)
+    return udr
+
+def rimebrew_dir()->str:
+    rbd = os.path.join(usr_data_dir(), 'rimebrew')
+    mkdir(rbd)
+    return rbd
+

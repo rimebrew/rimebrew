@@ -1,15 +1,14 @@
 # -*- coding: UTF-8 -*-
 
 # Fetch bundles from cloud and then update bundle_meta
-
-from .bundle import bundle_factory
-from .utility_functions import *
+import os
+from bundle import bundle_factory
+from utility_functions import *
 
 
 def update():
-    mkdir('./cache')
-    os.chdir('./cache')
-    main_bundle_dir = './rime_bundle'
+    os.chdir(usr_data_dir())
+    main_bundle_dir = os.path.join('./rime_bundle')
 
     central_url = "https://github.com/rimebrew/rime_bundle/archive/main.zip"
     fetch_zip_file_to(central_url, '.', folder_name="rime_bundle")

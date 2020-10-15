@@ -23,7 +23,6 @@ class Schema:
     Description of a schema.
 
     """
-
     # FIXME 临时放进去的 PATH
     def __init__(self, _schema_id: set, _schema_yaml: dict, _mother_bundle: str):
         self._id = _schema_id

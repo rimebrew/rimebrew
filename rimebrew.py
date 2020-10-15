@@ -10,8 +10,6 @@ import click
 @click.group()
 def cli():
     """rimebrew: the canonical input schemas manager :D"""
-    print("welcome!")
-
 
 @cli.command()
 @click.argument('help_entry')
@@ -42,7 +40,7 @@ def install(schema_name):
 @cli.command()
 def list():
     """Display a table of available schemas"""
-    from .inspector import print_schemas
+    from inspector import print_schemas
     print_schemas()
 
 
@@ -55,7 +53,7 @@ def remove():
 @cli.command()
 def update():
     """Fetch new schemas form repos and refresh local index."""
-    from .update import update
+    from update import update
     update()
 
 
@@ -66,4 +64,5 @@ def upgrade():
 
 
 if __name__ == '__main__':
+
     cli()

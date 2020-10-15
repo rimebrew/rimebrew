@@ -140,3 +140,5 @@ dmypy.json
 
 # Pyre type checker
 .pyre/
+/user_data_dir/rime_bundle/
+/user_data_dir/bundle_meta.yaml
