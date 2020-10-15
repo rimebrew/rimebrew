@@ -7,7 +7,7 @@ import urllib.request
 import zipfile
 from pathlib import Path
 
-from . import yaml
+import yaml
 
 
 # commonly used functions

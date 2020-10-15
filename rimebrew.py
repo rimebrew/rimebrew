@@ -5,13 +5,12 @@
 # Reference Projects: OPAM & Flatpak & Homebrew
 # Both OPAM & Flatpak have similar module of distribution as rimebrew
 
-from . import click
-
+import click
 
 @click.group()
 def cli():
     """rimebrew: the canonical input schemas manager :D"""
-    pass
+    print("welcome!")
 
 
 @cli.command()
