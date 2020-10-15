@@ -56,7 +56,32 @@ def dump_yaml(_content: str, _path: str):
     with open(_path, 'wb') as _file:
         _file.write(yaml.dump(_content, allow_unicode=True).encode())
 
+
 # PYTHON
 
 def strJoin(*strings):
     return ''.join(strings)
+
+
+# RIME related
+
+
+# usr_data_dir discovery
+# avoid <https://github.com/rime/plum/issues/2>
+
+# fcitx code copy from https://github.com/rime/plum/blob/master/scripts/frontend.sh#L30
+# assuming it ir right
+
+def get_usr_data_dir():
+    if 'ibus' in [os.getenv('INPUT_METHOD'), os.getenv('GTK_IM_MODULE')]:
+        return "~/.config/ibus/rime/"
+    elif "fcitx" in [os.getenv('INPUT_METHOD'), os.getenv('QT_IM_MODULE')]:  # TODO not sure
+        return "~/.config/fcitx/rime/"
+    elif "fcitx5" in [os.getenv('INPUT_METHOD'), os.getenv('QT_IM_MODULE')]:
+        return "~/.local/share/fcitx5/rime"
+    elif os.name == "darwin":
+        return "~/Library/Rime/"
+    elif os.name == "Windows":
+        print("Detected that you are using Windows.\n")
+        print("Please move rimebrew executable inside your user config dir")
+        return "../"
