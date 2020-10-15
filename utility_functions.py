@@ -5,6 +5,7 @@ import tempfile
 import typing
 import urllib.request
 import zipfile
+from os.path import expanduser
 from pathlib import Path
 
 import yaml
@@ -73,15 +74,14 @@ def strJoin(*strings):
 # fcitx code copy from https://github.com/rime/plum/blob/master/scripts/frontend.sh#L30
 # assuming it ir right
 
+home = expanduser("~")
 def _usr_data_dir():
-    if mode == 'dev':
-        return "./user_data_dir"
     if 'ibus' in [os.getenv('INPUT_METHOD'), os.getenv('GTK_IM_MODULE')]:
-        return "~/.config/ibus/rime/"
+        return home+"/.config/ibus/rime/"
     elif "fcitx" in [os.getenv('INPUT_METHOD'), os.getenv('QT_IM_MODULE')]:  # TODO not sure
-        return "~/.config/fcitx/rime/"
+        return home+"/.config/fcitx/rime/"
     elif "fcitx5" in [os.getenv('INPUT_METHOD'), os.getenv('QT_IM_MODULE')]:
-        return "~/.local/share/fcitx5/rime"
+        return home+"/.local/share/fcitx5/rime"
     elif os.name == "darwin":
         return "~/Library/Rime/"
     elif os.name == "Windows":

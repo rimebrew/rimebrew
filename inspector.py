@@ -4,7 +4,7 @@
 # It won't modify any file.
 # For the stupid windows' terminal
 import colorama
-from utility_functions import load_from_yamlfile,usr_data_dir
+from .utility_functions import load_from_yamlfile,usr_data_dir
 import os
 
 colorama.init()

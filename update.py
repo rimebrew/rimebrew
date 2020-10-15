@@ -2,8 +2,8 @@
 
 # Fetch bundles from cloud and then update bundle_meta
 import os
-from bundle import bundle_factory
-from utility_functions import *
+from .bundle import bundle_factory
+from .utility_functions import *
 
 
 def update():
