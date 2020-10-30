@@ -5,7 +5,7 @@
 # Reference Projects: OPAM & Flatpak & Homebrew
 # Both OPAM & Flatpak have similar module of distribution as rimebrew
 
-import click
+from . import click
 
 @click.group()
 def cli():

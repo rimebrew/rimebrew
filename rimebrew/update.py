@@ -7,7 +7,7 @@ from .utility_functions import *
 
 
 def update():
-    os.chdir(usr_data_dir())
+    os.chdir(rimebrew_dir())
     main_bundle_dir = os.path.join('./rime_bundle')
 
     central_url = "https://github.com/rimebrew/rime_bundle/archive/main.zip"

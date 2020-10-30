@@ -8,7 +8,7 @@ import zipfile
 from os.path import expanduser
 from pathlib import Path
 
-import yaml
+from . import yaml
 
 # mode = 'dev'
 

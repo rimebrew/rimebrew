@@ -1,3 +1,16 @@
+
+**/.idea/workspace.xml **/.idea/tasks.xml
+.idea/**
+ __pycache__/
+ *.pyc
+
+/scrips/**
+/cache/**
+venv/**/*
+click/__pycache__/**
+yaml/__pycache__/**
+web_ui/__pycache__/**
+
 # Byte-compiled / optimized / DLL files
 __pycache__/
 *.py[cod]
@@ -31,7 +44,7 @@ MANIFEST
 #  Usually these files are written by a python script from a template
 #  before PyInstaller builds the exe, so as to inject date/other infos into it.
 *.manifest
-#*.spec
+*.spec
 
 # Installer logs
 pip-log.txt
@@ -127,12 +140,5 @@ dmypy.json
 
 # Pyre type checker
 .pyre/
-/.idea/vcs.xml
-/.idea/.gitignore
-/.idea/rimebrew_distributions.iml
-/.idea/inspectionProfiles/Project_Default.xml
-/.idea/inspectionProfiles/profiles_settings.xml
-/.idea/modules.xml
-/.idea/misc.xml
-/.idea/codeStyles/codeStyleConfig.xml
-/.idea/uRime.iml
+/user_data_dir/rime_bundle/
+/user_data_dir/bundle_meta.yaml
