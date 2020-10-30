@@ -75,29 +75,47 @@ def strJoin(*strings):
 # assuming it ir right
 
 home = expanduser("~")
-def _usr_data_dir():
-    if 'ibus' in [os.getenv('INPUT_METHOD'), os.getenv('GTK_IM_MODULE')]:
-        return home+"/.config/ibus/rime/"
-    elif "fcitx" in [os.getenv('INPUT_METHOD'), os.getenv('QT_IM_MODULE')]:  # TODO not sure
-        return home+"/.config/fcitx/rime/"
-    elif "fcitx5" in [os.getenv('INPUT_METHOD'), os.getenv('QT_IM_MODULE')]:
-        return home+"/.local/share/fcitx5/rime"
-    elif os.name == "darwin":
-        return "~/Library/Rime/"
-    elif os.name == "Windows":
-        print("Detected that you are using Windows.\n")
-        print("Please move rimebrew executable inside your user config dir")
-        return "../"
 
 
-def usr_data_dir()->str:
-    """ wrapper of _usr_data_dir """
-    udr = _usr_data_dir()
-    mkdir(udr)
-    return udr
+class _rimePaths:
+    def _usr_data_dir(self):
+        if 'ibus' in [os.getenv('INPUT_METHOD'), os.getenv('GTK_IM_MODULE')]:
+            return home + "/.config/ibus/rime/"
+        elif "fcitx" in [os.getenv('INPUT_METHOD'), os.getenv('QT_IM_MODULE')]:  # TODO not sure
+            return home + "/.config/fcitx/rime/"
+        elif "fcitx5" in [os.getenv('INPUT_METHOD'), os.getenv('QT_IM_MODULE')]:
+            return home + "/.local/share/fcitx5/rime"
+        elif os.name == "darwin":
+            return "~/Library/Rime/"
+        elif os.name == "Windows":
+            print("Detected that you are using Windows.\n")
+            print("Please move rimebrew executable inside your user config dir")
+            return "../"
 
-def rimebrew_dir()->str:
-    rbd = os.path.join(usr_data_dir(), 'rimebrew')
-    mkdir(rbd)
-    return rbd
+    @property
+    def usr_data_dir(self) -> str:
+        """ wrapper of _usr_data_dir """
+        udr = self._usr_data_dir()
+        mkdir(udr)
+        return udr
 
+    @property
+    def rimebrew_dir(self) -> str:
+        rbd = os.path.join(self.usr_data_dir, 'rimebrew')
+        mkdir(rbd)
+        return rbd
+
+    @property
+    def meta_bundle_yaml(self) -> str:
+        return os.path.join(self.rimebrew_dir, 'bundle_meta.yaml')
+
+    @property
+    def user_profile_yaml(self) -> str:
+        return os.path.join(self.rimebrew_dir, 'user_profile.yaml')
+
+    @property
+    def default_custom_yaml(self) -> str:
+        return os.path.join(self.usr_data_dir, "default.custom.yaml")
+
+
+RimePaths = _rimePaths()

@@ -1,5 +1,7 @@
-#
-# spec file for package python-rime_brew
+# spec file for OpenSUSE
+# OpenSUSE not going to drop python2 in a short time, resulting
+# a lot of python2 workaournds
+# Fedora is way much easier
 #
 # Copyright (c) 2020 SUSE LINUX GmbH, Nuernberg, Germany.
 #

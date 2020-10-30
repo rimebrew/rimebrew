@@ -2,7 +2,7 @@ import os
 from dataclasses import dataclass
 from typing import Dict
 
-from .utility_functions import load_from_yamlfile, load_yaml_doc, fetch_zip_file_to
+from .utility_functions import load_from_yamlfile, load_yaml_doc, fetch_zip_file_to, RimePaths
 
 
 # A super _elegant_ YAML <-> bundle.yaml mapping
@@ -25,7 +25,9 @@ class Bundle:
     provides: Dict
 
     def fetch(self):
-        fetch_zip_file_to(self.repo.url + self.repo.url_to_file, './cache/bundles',folder_name=self.repo.id)
+        fetch_zip_file_to(self.repo.url + self.repo.url_to_file, os.path.join(RimePaths.rimebrew_dir, "cache"),
+                          folder_name=self.repo.id)
+        print("fetch sucessfully")
 
 
 ## TODO here we need some magic! Turn a str into a CLASS :)
@@ -46,13 +48,5 @@ def bundle_factory(_bundle_file_path: str) -> Bundle:
 
 
 def bundle_factory_from_schema_id(_schema_id: str, fetch=True) -> Bundle:
-    source_file = load_from_yamlfile('./cache/bundle_meta.yaml')[_schema_id]['source']
-    return bundle_factory(os.path.join('./cache/rime_bundle', source_file))
-
-
-if __name__ == "__main__":
-    x = bundle_factory('./test.yaml')
-
-    print(x.repo.id)
-    print(x.repo.display_name)
-    print(x.provides)
+    source_file = load_from_yamlfile(RimePaths.meta_bundle_yaml)[_schema_id]['source']
+    return bundle_factory(os.path.join(os.path.join(RimePaths.rimebrew_dir, "rime_bundle"), source_file))

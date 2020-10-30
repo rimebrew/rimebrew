@@ -136,3 +136,5 @@ dmypy.json
 /.idea/misc.xml
 /.idea/codeStyles/codeStyleConfig.xml
 /.idea/uRime.iml
+/.idea/rimebrew.iml
+/.idea/workspace.xml

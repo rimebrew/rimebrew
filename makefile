@@ -10,8 +10,12 @@ pypi_build:
 pypi_upload:
 	python3 -m twine upload --repository pypi dist/*
 
+pip_essentials:
+	pip install wheel
+
 clean:
 	rm -rf ./dist
 
 remove:
 	pip uninstall rime-brew
+

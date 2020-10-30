@@ -3,20 +3,18 @@
 # Inspector.py define several "look up" functions
 # It won't modify any file.
 # For the stupid windows' terminal
-import colorama
-from .utility_functions import load_from_yamlfile,usr_data_dir
+from . import colorama
+from .utility_functions import load_from_yamlfile, RimePaths
 import os
 
 colorama.init()
 
-# from rich.console import Console
-# from rich.table import Table
-
 import typing
 
 # TODO FIXME Implement abs path now!
-meta_bundle = load_from_yamlfile(os.path.join(usr_data_dir(),'bundle_meta.yaml'))
-user_yaml = load_from_yamlfile(os.path.join(usr_data_dir(),'user_profile.yaml'))
+meta_bundle = load_from_yamlfile(RimePaths.meta_bundle_yaml)
+user_yaml = load_from_yamlfile(RimePaths.user_profile_yaml)
+default_custom_yaml = load_from_yamlfile(RimePaths.default_custom_yaml)
 
 
 def get_installed() -> typing.Set:
