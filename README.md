@@ -1,21 +1,28 @@
  # R I M E B R E W
 The Canonical RIME Schema Manager.
 
-[![PyPI version](https://badge.fury.io/py/rime-brew.svg)](https://badge.fury.io/py/rime-brew)
-![](https://img.shields.io/badge/openSUSE-testing-green?style=flat-square&logo=openSUSE&link=https://build.opensuse.org/package/binaries/home:slbtongying/rimebrew/openSUSE_Leap_15.2)
-![Peek 2020-10-11 23-52](https://user-images.githubusercontent.com/20123683/95703540-23415080-0c1d-11eb-8663-1af78e76d624.gif)
-![](https://img.shields.io/badge/Windows-Testing-9cf?style=flat&logo=Windows)
+![PyPI version](https://badge.fury.io/py/rime-brew.svg)
+![opensuse](https://img.shields.io/badge/openSUSE-testing-green?style=flat-square&logo=openSUSE&link=https://build.opensuse.org/package/binaries/home:slbtongying/rimebrew/openSUSE_Leap_15.2)
+![windows_testing](https://img.shields.io/badge/Windows-Testing-9cf?style=flat&logo=Windows)
+![demo](https://user-images.githubusercontent.com/20123683/95703540-23415080-0c1d-11eb-8663-1af78e76d624.gif)
+
 
 # 使用方法
 
-Python 3.6+,下载源码包，运行 rimebrew.py 即可。（Windows 需要把这些文件扔到用户配置文件夹里面）
+## Windows
 
+下载
+https://github.com/rimebrew/rimebrew/releases/tag/v1.0_win
+
+## pip
 ```
+# python3.6+
 pip install Rimebrew
-
 ```
 
-RPM for openSUSE
+## package managers
+
+### openSUSE
 
 ```
 https://build.opensuse.org/package/binaries/home:slbtongying/rimebrew/openSUSE_Leap_15.2
@@ -39,12 +46,12 @@ https://build.opensuse.org/package/binaries/home:slbtongying/rimebrew/openSUSE_L
 
 # 发行方案
 
-+ Windows 预计使用 Cython 转换成 C 后编译发行。备用方案是从观望上下载 embed 版 py（压缩包15mb）
-
 + 我会按照 RPM + Homebrew -> Windows 的顺序来制作
 + Ubuntu/Debian -> 暂无计划，需要其他人
 
 # Plan
+
++ 实现 plum 的所有功能。
 
 + 向朋友推荐 RIME 的时候，可以配合这个工具几分钟以内完成安装，且迅速地尝试多种输入方案
 + 设计了新的输入法，不需要用户读任何说明来安装
