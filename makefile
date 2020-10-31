@@ -13,6 +13,12 @@ pypi_upload:
 pip_essentials:
 	pip install wheel
 
+win_dist:
+	python3.exe  .\pyinstaller_dist.py  
+
+win_dist_raw:
+	pyinstaller importer.py --name rimebrew --exclude-module tkinter --noconfirm --onefile --console
+
 clean:
 	rm -rf ./dist
 

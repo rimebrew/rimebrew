@@ -80,5 +80,12 @@ def debug():
     print(test_profile.get_installed_schema())
 
 
-if __name__ == '__main__':
+# I don't know its my problem or python's problem
+# The relative import mechism of py is not intuitive
+# with some obscure rules.
+
+def main():
     cli()
+
+if __name__ == '__main__':
+     main()
