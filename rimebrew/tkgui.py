@@ -1,47 +1,72 @@
-import tkinter as tk
+from  tkinter import *
 import tkinter.ttk as ttk
 # Preliminary code for a simple GUI
 
-class rimebrewGUI:
-    def __init__(self, master=None):
-        # build ui
-        self.frame_1 = ttk.Frame(master)
-        self.button_5 = ttk.Button(self.frame_1)
-        self.button_5.config(text='button_5')
-        self.button_5.grid(sticky='w')
-        self.button_6 = ttk.Button(self.frame_1)
-        self.button_6.config(text='button_6')
-        self.button_6.grid(column='1', row='0', sticky='w')
-        self.button_7 = ttk.Button(self.frame_1)
-        self.button_7.config(text='button_7')
-        self.button_7.grid(column='2', row='0', sticky='w')
-        self.entry_2 = ttk.Entry(self.frame_1)
-        _text_ = '''entry_2'''
-        self.entry_2.delete('0', 'end')
-        self.entry_2.insert('0', _text_)
-        self.entry_2.grid(column='3', row='0', sticky='w')
-        self.button_8 = ttk.Button(self.frame_1)
-        self.button_8.config(text='button_8')
-        self.button_8.grid(column='4', row='0', sticky='w')
-        self.panedwindow_1 = ttk.Panedwindow(self.frame_1, orient='horizontal')
-        self.panedwindow_1.config(height='200', width='200')
-        self.panedwindow_1.grid(column='0', columnspan='5', row='1')
-        self.Infopan = ttk.Notebook(self.frame_1)
-        self.Infopan.config(height='200', width='200')
-        self.Infopan.grid(column='0', columnspan='5', row='2')
-        self.frame_1.config(height='200', width='200')
-        self.frame_1.grid()
+# TODO: add weight to resize arbitrary
 
-        # Main widget
-        self.mainwindow = self.frame_1
+root = Tk()
+root.title("Rimebrew")
+
+root.rowconfigure(0,weight=1)
+root.columnconfigure(0,weight=1)
 
 
-    def run(self):
-        self.mainwindow.mainloop()
+mainFrame = ttk.Frame(root)
+mainFrame.grid(column=0, row=0, sticky=(N, W, E, S))
 
-if __name__ == '__main__':
-    import tkinter as tk
-    root = tk.Tk()
-    app = rimebrewGUI(root)
-    app.run()
+
+# weight=0 means the first row or the grid wouldn't change at all.
+mainFrame.rowconfigure(0,weight=0)
+mainFrame.rowconfigure(1,weight=1)
+
+mainFrame.columnconfigure(0,weight=1)
+
+
+# toolbar area
+toolbarFrame = ttk.Frame(mainFrame)
+toolbarFrame.grid(column=0,row=0, sticky=(N, W, E, S))
+
+toolbarFrame.columnconfigure(3,weight=1)
+
+buttom_update = ttk.Button(toolbarFrame,text='update')
+buttom_update.grid(column=0,row=0, sticky='nesw')
+
+buttom_install= ttk.Button(toolbarFrame,text='install')
+buttom_install.grid(column=1,row=0, sticky='nesw')
+
+buttom_remove = ttk.Button(toolbarFrame,text='remove')
+buttom_remove.grid(column=2,row=0, sticky='nesw')
+
+search_box    = ttk.Entry(toolbarFrame)
+search_box.grid(column=3,row=0, sticky='nesw')
+
+search_box.insert('0',"Type here...")
+buttom_search = ttk.Button(toolbarFrame,text='search')\
+                 .grid(column=4,row=0, sticky='nesw')
+
+#Display area
+middleFrame = ttk.Labelframe(mainFrame,text="Schema List")
+middleFrame.grid(column=0,row=1, sticky='nesw')
+middleFrame.columnconfigure(0,weight=1)
+middleFrame.rowconfigure(0,weight=1)
+
+
+tree = ttk.Treeview(middleFrame)
+tree.grid(column=0,row=0, sticky='nesw')
+
+tree["columns"]=("one","two")
+tree.column("one", width=100)
+tree.column("two", width=100)
+tree.heading("one", text="coulmn A")
+tree.heading("two", text="column B")
+
+tree.insert("" , 0,    text="Line 1", values=("1A","1b"))
+
+id2 = tree.insert("", 1, "dir2", text="Dir 2")
+tree.insert(id2, "end", "dir 2", text="sub dir 2", values=("2A","2B"))
+
+tree.insert("", 3, "dir3", text="Dir 3")
+tree.insert("dir3", 3, text=" sub dir 3",values=("3A"," 3B"))
+
+root.mainloop()
 
