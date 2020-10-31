@@ -48,5 +48,5 @@ def bundle_factory(_bundle_file_path: str) -> Bundle:
 
 
 def bundle_factory_from_schema_id(_schema_id: str, fetch=True) -> Bundle:
-    source_file = load_from_yamlfile(RimePaths.meta_bundle_yaml)[_schema_id]['source']
-    return bundle_factory(os.path.join(os.path.join(RimePaths.rimebrew_dir, "rime_bundle"), source_file))
+    bundle_source_file = load_from_yamlfile(RimePaths.meta_bundle_yaml)[_schema_id]['source']
+    return bundle_factory(os.path.join(os.path.join(RimePaths.rimebrew_dir, "rime_bundle"), bundle_source_file))

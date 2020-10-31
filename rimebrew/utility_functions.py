@@ -54,7 +54,7 @@ def load_yaml_doc(_path: str):
         return [document for document in yaml.load_all(file, Loader=yaml.Loader)]
 
 
-def dump_yaml(_content: str, _path: str):
+def dump_yaml(_content, _path: str):
     with open(_path, 'wb') as _file:
         _file.write(yaml.dump(_content, allow_unicode=True).encode())
 
@@ -79,6 +79,9 @@ home = expanduser("~")
 
 class _rimePaths:
     def _usr_data_dir(self):
+        """
+        按照这个完美定义 user_data_dir https://github.com/rime/plum/blob/master/scripts/frontend.sh
+        """
         if 'ibus' in [os.getenv('INPUT_METHOD'), os.getenv('GTK_IM_MODULE')]:
             return home + "/.config/ibus/rime/"
         elif "fcitx" in [os.getenv('INPUT_METHOD'), os.getenv('QT_IM_MODULE')]:  # TODO not sure

@@ -16,6 +16,8 @@ meta_bundle = load_from_yamlfile(RimePaths.meta_bundle_yaml)
 user_yaml = load_from_yamlfile(RimePaths.user_profile_yaml)
 default_custom_yaml = load_from_yamlfile(RimePaths.default_custom_yaml)
 
+user_profile_yaml = load_from_yamlfile(RimePaths.user_profile_yaml)
+
 
 def get_installed() -> typing.Set:
     return set(user_yaml['installed'])
@@ -51,4 +53,3 @@ def print_schemas():
         installed = get_installed()
         status = colorama.Fore.BLUE + 'Installed' + colorama.Style.RESET_ALL if _id in installed else colorama.Fore.MAGENTA + 'Available' + colorama.Style.RESET_ALL
         print(formatString.format(id=_id, name=my_align(schema['display_name'], 20), status=status))
-

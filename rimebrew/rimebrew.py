@@ -6,10 +6,14 @@
 # Both OPAM & Flatpak have similar module of distribution as rimebrew
 
 from . import click
+from .utility_functions import RimePaths, mkdir
+import os.path
+
 
 @click.group()
 def cli():
     """rimebrew: the canonical input schemas manager :D"""
+
 
 @cli.command()
 @click.argument('help_entry')
@@ -54,6 +58,11 @@ def remove():
 def update():
     """Fetch new schemas form repos and refresh local index."""
     from .update import update
+
+    # warning: maybe it looks reluctant, the MacOS require such way to create a file.
+    # TODO move this into somewhere init
+    if not os.path.exists(RimePaths.user_profile_yaml):
+        with open(RimePaths.user_profile_yaml, 'w'): pass
     update()
 
 
@@ -63,6 +72,13 @@ def upgrade():
     pass
 
 
-if __name__ == '__main__':
+@cli.command()
+def debug():
+    """Used for developers"""
+    from .user_profile import user_profile
+    test_profile = user_profile(path="/home/slb/.config/ibus/rime/rimebrew/user_profile.yaml")
+    print(test_profile.get_installed_schema())
 
+
+if __name__ == '__main__':
     cli()

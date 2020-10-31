@@ -8,7 +8,7 @@ The Canonical RIME Schema Manager.
 
 # 使用方法
 
-Python 3.6+。把整个源码包丢到 用户的配置文件夹 下面，按上图操作 TODO: 随便丢一个地方就可以
+Python 3.6+,下载源码包，运行 rimebrew.py 即可。（Windows 需要把这些文件扔到用户配置文件夹里面）
 
 ```
 pip install Rimebrew
@@ -41,7 +41,7 @@ https://build.opensuse.org/package/binaries/home:slbtongying/rimebrew/openSUSE_L
 
 + Windows 预计使用 Cython 转换成 C 后编译发行。备用方案是从观望上下载 embed 版 py（压缩包15mb）
 
-+ 我会按照 RPM + Homebrew -> Windows -> pypi 的顺序来制作
++ 我会按照 RPM + Homebrew -> Windows 的顺序来制作
 + Ubuntu/Debian -> 暂无计划，需要其他人
 
 # Plan
