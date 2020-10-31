@@ -62,6 +62,9 @@ https://build.opensuse.org/package/binaries/home:slbtongying/rimebrew/openSUSE_L
 + 配置功能，rimebrew 要能够理解配置文件以此来
 + 实现 [plum #4](https://github.com/rime/plum/issues/4)
 
++ Profile_switcher?
++ 云输入？用户可以选择上传自己的字典。
+
 + 完成后发布 1.0
 
 
