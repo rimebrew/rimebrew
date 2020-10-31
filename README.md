@@ -1,19 +1,21 @@
  # R I M E B R E W
 The Canonical RIME Schema Manager.
 
-![PyPI version](https://badge.fury.io/py/rime-brew.svg)
-![opensuse](https://img.shields.io/badge/openSUSE-testing-green?style=flat-square&logo=openSUSE&link=https://build.opensuse.org/package/binaries/home:slbtongying/rimebrew/openSUSE_Leap_15.2)
-![windows_testing](https://img.shields.io/badge/Windows-Testing-9cf?style=flat&logo=Windows)
+[![PyPI version](https://badge.fury.io/py/rime-brew.svg)](https://pypi.org/project/rime-brew/)
+[![opensuse](https://img.shields.io/badge/openSUSE-testing-green?style=flat-square&logo=openSUSE&link=https://build.opensuse.org/package/binaries/home:slbtongying/rimebrew/openSUSE_Leap_15.2)](https://build.opensuse.org/package/binaries/home:slbtongying/rimebrew/openSUSE_Leap_15.2
+)
+[![windows_testing](https://img.shields.io/badge/Windows-Testing-9cf?style=flat&logo=Windows)](https://github.com/rimebrew/rimebrew/releases/tag/v1.0_win
+)
 ![demo](https://user-images.githubusercontent.com/20123683/95703540-23415080-0c1d-11eb-8663-1af78e76d624.gif)
 
 
 # 使用方法
 
 ## Windows
-
+```
 下载
 https://github.com/rimebrew/rimebrew/releases/tag/v1.0_win
-
+```
 ## pip
 ```
 # python3.6+
