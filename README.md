@@ -19,7 +19,7 @@ https://github.com/rimebrew/rimebrew/releases/tag/v1.0_win
 ## pip
 ```
 # python3.6+
-pip install Rimebrew
+pip install rime-brew
 ```
 
 ## package managers
