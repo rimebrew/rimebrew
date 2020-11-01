@@ -1,5 +1,5 @@
 # Improve this file if you know things about make
-all:
+all: gen_translates
 	python3 setup.py sdist bdist_wheel
 	yes | pip uninstall rime_brew
 	pip install ./dist/rime_brew-0.0.8-py3-none-any.whl
@@ -25,3 +25,5 @@ clean:
 remove:
 	pip uninstall rime-brew
 
+gen_translates:
+	msgfmt -o ./rimebrew/local/zh_CN/LC_MESSAGES/messages.mo ./rimebrew/local/zh_CN/LC_MESSAGES/messages.po

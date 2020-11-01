@@ -3,6 +3,8 @@ import setuptools
 # Detailed info on best practice to package a click_ app:
 # https://click.palletsprojects.com/en/7.x/setuptools/
 
+print(setuptools.find_packages())
+
 with open("README.md", "r") as fh:
     long_description = fh.read()
 
@@ -16,6 +18,8 @@ setuptools.setup(
     long_description_content_type="text/markdown",
     url="https://github.com/rimebrew/rimebrew",
     packages=setuptools.find_packages(),
+    # translation list
+    package_data={'rimebrew': ['local/zh_CN/LC_MESSAGES/messages.po']},
     entry_points='''
         [console_scripts]
         rimebrew=rimebrew.rimebrew:cli
@@ -25,6 +29,6 @@ setuptools.setup(
         "License :: OSI Approved :: GNU General Public License v3 (GPLv3)",
         "Operating System :: OS Independent",
     ],
-    python_requires='>=3.6',
+    python_requires='>=3.7',
     include_package_data=True,
 )

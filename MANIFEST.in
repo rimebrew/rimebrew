@@ -1,2 +1,9 @@
 include ./rimebrew/repo.yaml
 include ./rimebrew/user_profile.yaml
+recursive-include ./rimebrew/local/* *.mo *.po
+
+# the suckness of python's packaging rise to another level here.
+# They MAKE a packaging utility, it can include files.
+# MARVELOUSLY, their install utilities (pip, wheel, etc,)
+# wouldn't follow those rules, and ignore those include files
+# If you add any file here, you have to also include them at setup.py

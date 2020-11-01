@@ -9,6 +9,19 @@ from . import click
 from .utility_functions import RimePaths, mkdir
 import os.path
 
+# i18n
+# to add new translations, one have to go
+import gettext
+
+here = os.path.dirname(os.path.abspath(__file__))
+cn = gettext.translation('messages', localedir=os.path.join(here, "local"), languages=['zh_CN'])
+cn.install()
+
+
+#
+
+# FIXME: to add new translations you the following need to be done:
+# use pygettext.py or xgettext
 
 @click.group()
 def cli():
@@ -75,9 +88,13 @@ def upgrade():
 @cli.command()
 def debug():
     """Used for developers"""
-    from .user_profile import user_profile
-    test_profile = user_profile(path="/home/slb/.config/ibus/rime/rimebrew/user_profile.yaml")
-    print(test_profile.get_installed_schema())
+
+    # from .user_profile import user_profile
+    # test_profile = user_profile(path="/home/slb/.config/ibus/rime/rimebrew/user_profile.yaml")
+    # print(test_profile.get_installed_schema())
+
+    print(_("this is a english message"))
+    print(_("this is a message without translation"))
 
 
 # I don't know its my problem or python's problem
@@ -87,5 +104,7 @@ def debug():
 def main():
     cli()
 
+
 if __name__ == '__main__':
      main()
+
