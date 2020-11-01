@@ -12,6 +12,9 @@ root.title("Rimebrew")
 root.rowconfigure(0, weight=1)
 root.columnconfigure(0, weight=1)
 
+frameStyle=ttk.Style()
+frameStyle.configure('i.TFrame',background='red')
+
 mainFrame = ttk.Frame(root)
 mainFrame.grid(column=0, row=0, sticky=(N, W, E, S))
 
@@ -21,14 +24,14 @@ mainFrame.columnconfigure(2, weight=1)
 
 Installed_frame = ttk.Frame(mainFrame)
 Installed_list = Listbox(Installed_frame)
-Installed_text = Label(Installed_frame, text="Available Schemas")
+Installed_text = ttk.Label(Installed_frame, text="Available Schemas")
 
 Installed_frame.columnconfigure(0, weight=1)
 Installed_frame.rowconfigure(1, weight=1)
 
 Active_frame = ttk.Frame(mainFrame)
 Active_list = Listbox(Active_frame)
-Active_text = Label(Active_frame, text="Activated Schemas")
+Active_text = ttk.Label(Active_frame, text="Activated Schemas")
 Active_frame.columnconfigure(0, weight=1)
 Active_frame.rowconfigure(1, weight=1)
 

@@ -20,7 +20,7 @@ win_dist_raw:
 	pyinstaller importer.py --name rimebrew --exclude-module tkinter --noconfirm --onefile --console
 
 clean:
-	rm -rf ./dist
+	rm -rf build dist
 
 remove:
 	pip uninstall rime-brew
