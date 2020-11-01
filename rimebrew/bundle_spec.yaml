@@ -19,7 +19,7 @@ url_to_file: /archive/master.zip
 #                                    display_name:
 #                                    files: ["x","y"]}   }
 provides:
-  - luna_pinyin:
+  luna_pinyin:
     type: |
       basic -> 大部分字典 + 配置的字字典
       patcher -> 专门用作辅助其他输入法的补丁性质的 -> Rime-Emoji Rime-Symbols, ez-english etc
@@ -38,7 +38,7 @@ provides:
     # 根据类型额外的参数
     skin_target: -> 鼠须管的皮肤好像多一些
 
-  - luna_pinyin_traditional:
+  luna_pinyin_traditional:
     type:
     display_name: 朙月拼音-繁体
 
