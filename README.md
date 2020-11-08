@@ -1,4 +1,16 @@
- # R I M E B R E W
+# Note:
+
+Use a command line is too **Nerd** and complex for a simple app. Its not a serious pkg manager like the ones for an OS.
+
+Its should be as simple as Drag -> Drop then finished!
+
+Just write something like GNOMEs' but simpler. <https://addons.mozilla.org/en-CA/firefox/addon/gnome-shell-integration/>
+
+Drag an icon or a link from browser to a window, Done.
+
+What else is required? A config windows.
+
+# R I M E B R E W
 The Canonical RIME Schema Manager.
 
 [![PyPI version](https://badge.fury.io/py/rime-brew.svg)](https://pypi.org/project/rime-brew/)
