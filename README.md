@@ -1,3 +1,17 @@
+# Updated New Plan
+
+被 plum 带歪了, recipe 或者任何的类似 spec 的文件可以是不必要的。
+
+rime 里面的输入法就是 一个 xxx.custom.yaml + 字典文件，当然有几个特殊的带了 opencc 或者 lua 的文件，这些特殊的处理，现有的仓库都有约定成俗的目录结构。从一个仓库里面直接“猜”出来有哪些 xxx.custom.yaml 是可行的。
+
+plum 里面剩下的内容是重复的，而且 patch_file 那行并不是很灵活，<https://github.com/rime/rime-emoji/blob/master/customize.recipe.yaml>。
+
+有必要的话，可能需要给 [schema.yaml](<https://github.com/LEOYoon-Tsaw/Rime_collections/blob/master/Rime_description.md>) 里面添加一个额外的参数。
+
+简而又简 :)
+
+至于“混合体”输入法，据说直接在dependency 里面添加一行即可，但是现实情况会比较tricky。
+
 # Note:
 
 Use a command line is too **Nerd** and complex for a simple app. Its not a serious pkg manager like the ones for an OS.
