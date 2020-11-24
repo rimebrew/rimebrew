@@ -62,14 +62,6 @@ Drag an icon or a link from browser to a window, Done.
 
 What else is required? A config windows.
 
-# New plan
-
-A new none-Nerdy UI/UX :)
-
-![uRime](https://user-images.githubusercontent.com/20123683/98565084-30cd1300-227b-11eb-9ed0-615e82526bc4.png)
-
-从浏览器 复制粘贴 一个链接到配置窗口的一个框里面即可。
-
 # R I M E B R E W
 The Canonical RIME Schema Manager.
 
