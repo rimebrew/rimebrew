@@ -19,15 +19,18 @@ There are two RFCs related to this
 [rfc8252](https://tools.ietf.org/html/rfc8252)
 
 A how to guide:
-
 <https://support.shotgunsoftware.com/hc/en-us/articles/219031308-Launching-applications-using-custom-browser-protocols>
 
 Apple's offical guide
+
 <https://developer.apple.com/documentation/xcode/allowing_apps_and_websites_to_link_to_your_content/defining_a_custom_url_scheme_for_your_app?language=objc>
+
 You can actually just insert related content to the `.plist` inside the `.app`.
+
 
 ArchLinux wiki:
 <https://wiki.archlinux.org/index.php/XDG_MIME_Applications>
+
 As it says, you can just modify the `mimeapps.list` file for browsers to support it.
 
 MSDN:
