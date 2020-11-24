@@ -1,3 +1,21 @@
+# Update on Copy & Paste replacement
+
+After user installed an app, you can register a custom url schema (i.e. browser protocols) like below:
+
+<x-github-client://openRepo/https://github.com/rimebrew/rimebrew>
+<atom://settings-view/show-package?package=teletype>
+
+So that users can just click the link, the launch the app automatieclly.
+
+There are two RFCs related to this
+
+[rfc7595]<https://tools.ietf.org/html/rfc7595>
+[rfc8252]<https://tools.ietf.org/html/rfc8252>
+
+A how to guide:
+
+<https://support.shotgunsoftware.com/hc/en-us/articles/219031308-Launching-applications-using-custom-browser-protocols>
+
 # Updated New Plan
 
 被 plum 带歪了, recipe 或者任何的类似 spec 的文件可以是不必要的。
