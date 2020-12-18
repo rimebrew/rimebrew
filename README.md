@@ -1,69 +1,7 @@
-# Update on Copy & Paste replacement
-
-After user installed an app, you can register a custom url schema (i.e. browser protocols) like below:
-
-```
-x-github-client://openRepo/https://github.com/rimebrew/rimebrew
-atom://settings-view/show-package?package=teletype
-```
-So that users can just click the link, the launch the app automatieclly.
-
-like:
-```
-x-rimebrew://package/v1?package=luna-pinyin-schema.yaml
-```
-There are two RFCs related to this
-
-[rfc7595](https://tools.ietf.org/html/rfc7595)
-
-[rfc8252](https://tools.ietf.org/html/rfc8252)
-
-A how to guide:
-<https://support.shotgunsoftware.com/hc/en-us/articles/219031308-Launching-applications-using-custom-browser-protocols>
-
-Apple's offical guide
-
-<https://developer.apple.com/documentation/xcode/allowing_apps_and_websites_to_link_to_your_content/defining_a_custom_url_scheme_for_your_app?language=objc>
-
-You can actually just insert related content to the `.plist` inside the `.app`.
-
-
-ArchLinux wiki:
-<https://wiki.archlinux.org/index.php/XDG_MIME_Applications>
-
-As it says, you can just modify the `mimeapps.list` file for browsers to support it.
-
-MSDN:
-<https://docs.microsoft.com/en-us/previous-versions/windows/internet-explorer/ie-developer/platform-apis/aa767914(v=vs.85)?redirectedfrom=MSDN>
-
-# Updated New Plan
-
-被 plum 带歪了, recipe 或者任何的类似 spec 的文件可以是不必要的。
-
-rime 里面的输入法就是 一个 xxx.custom.yaml + 字典文件，当然有几个特殊的带了 opencc 或者 lua 的文件，这些特殊的处理，现有的仓库都有约定成俗的目录结构。从一个仓库里面直接“猜”出来有哪些 xxx.custom.yaml 是可行的。
-
-plum 里面剩下的内容是重复的，而且 patch_file 那行并不是很灵活，<https://github.com/rime/rime-emoji/blob/master/customize.recipe.yaml>。
-
-有必要的话，可能需要给 [schema.yaml](<https://github.com/LEOYoon-Tsaw/Rime_collections/blob/master/Rime_description.md>) 里面添加一个额外的参数。
-
-简而又简 :)
-
-至于“混合体”输入法，据说直接在dependency 里面添加一行即可，但是现实情况会比较tricky。
-
-# Note:
-
-Use a command line is too **Nerd** and complex for a simple app. Its not a serious pkg manager like the ones for an OS.
-
-Its should be as simple as Drag -> Drop then finished!
-
-Just write something like GNOMEs' but simpler. <https://addons.mozilla.org/en-CA/firefox/addon/gnome-shell-integration/>
-
-Drag an icon or a link from browser to a window, Done.
-
-What else is required? A config windows.
-
 # R I M E B R E W
-The Canonical RIME Schema Manager.
+A RIME Schema Manager prototype. 
+
+**I currently working on a GUI client rather than a console interface ->** [rimebrew_qt](https://github.com/rimebrew/rimebrew_qt)
 
 [![PyPI version](https://badge.fury.io/py/rime-brew.svg)](https://pypi.org/project/rime-brew/)
 [![opensuse](https://img.shields.io/badge/openSUSE-testing-green?style=flat-square&logo=openSUSE&link=https://build.opensuse.org/package/binaries/home:slbtongying/rimebrew/openSUSE_Leap_15.2)](https://build.opensuse.org/package/binaries/home:slbtongying/rimebrew/openSUSE_Leap_15.2
@@ -155,3 +93,68 @@ https://build.opensuse.org/package/binaries/home:slbtongying/rimebrew/openSUSE_L
 + 唯一的版本控制就是：在本地更新前创建一个当前的配置的 snapshot，如果更新破坏了，就直接 rollback
 + 另外一旦失败就打印一份详细的出错说可以用来复制粘贴
 
+# Updated New Plan
+
+被 plum 带歪了, recipe 或者任何的类似 spec 的文件可以是不必要的。
+
+rime 里面的输入法就是 一个 xxx.custom.yaml + 字典文件，当然有几个特殊的带了 opencc 或者 lua 的文件，这些特殊的处理，现有的仓库都有约定成俗的目录结构。从一个仓库里面直接“猜”出来有哪些 xxx.custom.yaml 是可行的。
+
+plum 里面剩下的内容是重复的，而且 patch_file 那行并不是很灵活，<https://github.com/rime/rime-emoji/blob/master/customize.recipe.yaml>。
+
+有必要的话，可能需要给 [schema.yaml](<https://github.com/LEOYoon-Tsaw/Rime_collections/blob/master/Rime_description.md>) 里面添加一个额外的参数。
+
+简而又简 :)
+
+至于“混合体”输入法，据说直接在dependency 里面添加一行即可，但是现实情况会比较tricky。
+
+
+# Update on Copy & Paste replacement
+
+After user installed an app, you can register a custom url schema (i.e. browser protocols) like below:
+
+```
+x-github-client://openRepo/https://github.com/rimebrew/rimebrew
+atom://settings-view/show-package?package=teletype
+```
+So that users can just click the link, the launch the app automatieclly.
+
+like:
+```
+x-rimebrew://package/v1?package=luna-pinyin-schema.yaml
+```
+There are two RFCs related to this
+
+[rfc7595](https://tools.ietf.org/html/rfc7595)
+
+[rfc8252](https://tools.ietf.org/html/rfc8252)
+
+A how to guide:
+<https://support.shotgunsoftware.com/hc/en-us/articles/219031308-Launching-applications-using-custom-browser-protocols>
+
+Apple's offical guide
+
+<https://developer.apple.com/documentation/xcode/allowing_apps_and_websites_to_link_to_your_content/defining_a_custom_url_scheme_for_your_app?language=objc>
+
+You can actually just insert related content to the `.plist` inside the `.app`.
+
+
+ArchLinux wiki:
+<https://wiki.archlinux.org/index.php/XDG_MIME_Applications>
+
+As it says, you can just modify the `mimeapps.list` file for browsers to support it.
+
+MSDN:
+<https://docs.microsoft.com/en-us/previous-versions/windows/internet-explorer/ie-developer/platform-apis/aa767914(v=vs.85)?redirectedfrom=MSDN>
+
+
+# Note:
+
+Use a command line is too **Nerd** and complex for a simple app. Its not a serious pkg manager like the ones for an OS.
+
+Its should be as simple as Drag -> Drop then finished!
+
+Just write something like GNOMEs' but simpler. <https://addons.mozilla.org/en-CA/firefox/addon/gnome-shell-integration/>
+
+Drag an icon or a link from browser to a window, Done.
+
+What else is required? A config windows.
