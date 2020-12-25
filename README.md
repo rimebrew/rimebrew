@@ -1,6 +1,8 @@
 # R I M E B R E W
 A RIME Schema Manager prototype. 
 
+**I think what we really want is something like YaST that you can just point and click, everything is done. No search anything, No real any manual, No terminal.**
+
 **I currently working on a GUI client rather than a console interface ->** [rimebrew_qt](https://github.com/rimebrew/rimebrew_qt)
 
 [![PyPI version](https://badge.fury.io/py/rime-brew.svg)](https://pypi.org/project/rime-brew/)
