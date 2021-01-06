@@ -160,3 +160,7 @@ Just write something like GNOMEs' but simpler. <https://addons.mozilla.org/en-CA
 Drag an icon or a link from browser to a window, Done.
 
 What else is required? A config windows.
+
+# How to create an Firefox extension that can communicaet with local machine
+
+https://developer.mozilla.org/en-US/docs/Mozilla/Add-ons/WebExtensions/Native_messaging
