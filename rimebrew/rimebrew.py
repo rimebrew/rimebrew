@@ -5,8 +5,10 @@
 # Reference Projects: OPAM & Flatpak & Homebrew
 # Both OPAM & Flatpak have similar module of distribution as rimebrew
 
-from . import click
-from .utility_functions import RimePaths, mkdir
+from . import core
+from .core import RimePaths, mkdir
+
+import click
 import os.path
 
 # i18n
@@ -48,8 +50,7 @@ def install(schema_name):
     if _schema_name is None:
         click.echo("rimebrew install <schema_id>: Missing schema name  ")
     else:
-        from .install import basic_install
-        basic_install(schema_name)
+        core.basic_install(schema_name)
         print("Installed")
         # TODO modify user.yaml
 
@@ -57,8 +58,7 @@ def install(schema_name):
 @cli.command()
 def list():
     """Display a table of available schemas"""
-    from .inspector import print_schemas
-    print_schemas()
+    core.print_schemas()
 
 
 @cli.command()
@@ -70,13 +70,11 @@ def remove():
 @cli.command()
 def update():
     """Fetch new schemas form repos and refresh local index."""
-    from .update import update
-
     # warning: maybe it looks reluctant, the MacOS require such way to create a file.
     # TODO move this into somewhere init
     if not os.path.exists(RimePaths.user_profile_yaml):
         with open(RimePaths.user_profile_yaml, 'w'): pass
-    update()
+    core.update()
 
 
 @cli.command()

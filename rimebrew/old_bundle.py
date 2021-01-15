@@ -1,6 +1,6 @@
 import os.path
 
-from .utility_functions import load_from_yamlfile, fetch_zip_file_to
+from .core import load_from_yamlfile, fetch_zip_file_to
 
 # Rename this file -> it contains all the data structures used
 # local_index.yaml -> local_index -> to store all local datas

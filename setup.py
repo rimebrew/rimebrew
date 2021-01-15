@@ -17,9 +17,14 @@ setuptools.setup(
     long_description="RIME schema manager",
     long_description_content_type="text/markdown",
     url="https://github.com/rimebrew/rimebrew",
+    install_requires=[
+        'click',
+        'colorama',
+        'pyYAML'
+    ],
     packages=setuptools.find_packages(),
     # translation list
-    package_data={'rimebrew': ['local/zh_CN/LC_MESSAGES/messages.po']},
+    package_data={'rimebrew': ['local/zh_CN/LC_MESSAGES/messages.po','local/zh_CN/LC_MESSAGES/messages.mo']},
     entry_points='''
         [console_scripts]
         rimebrew=rimebrew.rimebrew:cli

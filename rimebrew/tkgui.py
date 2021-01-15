@@ -1,4 +1,4 @@
-from  tkinter import *
+from tkinter import *
 import tkinter.ttk as ttk
 # Preliminary code for a simple GUI
 
