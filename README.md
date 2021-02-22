@@ -164,3 +164,5 @@ What else is required? A config windows.
 # How to create an Firefox extension that can communicaet with local machine
 
 https://developer.mozilla.org/en-US/docs/Mozilla/Add-ons/WebExtensions/Native_messaging
+
+`:)` https://www.v2ex.com/t/754860
